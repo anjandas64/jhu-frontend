@@ -65,4 +65,19 @@ WARNING!!! WARNING!!!
     }
   }
 
+  function chooseGreeting(name) {
+    var firstLetter = name.charAt(0).toLowerCase();
+    if (firstLetter === 'j') {
+      return byeSpeaker.speakSimple(name);
+    } else {
+      return helloSpeaker.speakSimple(name);
+    }
+  }
+
+  var greetings = names.map(chooseGreeting);
+
+  for (var i = 0; i < greetings.length; i++) {
+    console.log(greetings[i]);
+  }
+
 })();
