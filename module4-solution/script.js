@@ -80,4 +80,22 @@ WARNING!!! WARNING!!!
     console.log(greetings[i]);
   }
 
+  var result = names.reduce(function (result, name) {
+    var firstLetter = name.charAt(0).toLowerCase();
+    if (firstLetter === 'j') {
+      result.bye.push(byeSpeaker.speakSimple(name));
+    } else {
+      result.hello.push(helloSpeaker.speakSimple(name));
+    }
+    return result;
+  }, { hello: [], bye: [] });
+
+  for (var i = 0; i < result.hello.length; i++) {
+    console.log(result.hello[i]);
+  }
+
+  for (var i = 0; i < result.bye.length; i++) {
+    console.log(result.bye[i]);
+  }
+
 })();
